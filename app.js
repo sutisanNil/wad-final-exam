@@ -11,6 +11,7 @@ require('./db/db.js')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var quotationRouter = require('./routes/quotations');
 var customerRouter = require('./routes/customers');
 
 var app = express();
@@ -36,7 +37,9 @@ app.get("/react-quotation/*", function (req, res) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/quotations',quotationRouter);
 app.use('/customers',customerRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
